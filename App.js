@@ -1,25 +1,13 @@
 import React from 'react';
-import { StyleSheet, Button, Alert, SafeAreaView, StatusBar, Platform } from 'react-native';
+import { View } from 'react-native';
+import WelcomeScreen from './app/screens/WelcomeScreen';
+
 
 export default function App() {
   
   return (
-    <SafeAreaView style={styles.container}>
-      <Button 
-        title="Click Me" 
-        onPress={() => 
-        Alert.prompt("My title", "My message", text => console.log(text))
-        }
-        color="orange"
-      />
-    </SafeAreaView>
+     
+    <WelcomeScreen />
+             
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-  },
-});
