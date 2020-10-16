@@ -12,14 +12,15 @@ export default function App() {
           flexDirection: "row",  //axis (horizontal)
           justifyContent: "center", //alig items accross the main axis
           alignItems: "center", //align axis accross secondary axis
-          alignContent: "center", //align all the content - only works if we have wrapping enabled
-          flexWrap: 'wrap'
           }}>
          
           <View style={{
             backgroundColor: "dodgerblue",
-            width: 100,
-            height: 300,
+            // flexBasis: 100, // map to width or height
+            // flexGrow: 1, //fill avalable space
+            flex: -1, //negative numbers in flex. same as flexShrink
+            width: 400,
+            height: 100,
             
           }}/>
 
@@ -35,18 +36,7 @@ export default function App() {
             height: 100,
           }}/>
 
-          <View style={{
-            backgroundColor: "gray",
-            width: 100,
-            height: 100,
-          }}/>
-
-          <View style={{
-            backgroundColor: "greenyellow",
-            width: 100,
-            height: 100,
-          }}/>
-
+          
         </View>
     
   );
