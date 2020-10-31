@@ -1,20 +1,14 @@
-import React, { useEffect } from "react";
-import * as ImagePicker from 'expo-image-picker';
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
 
-import Screen from "./app/components/Screen"
+import navigationTheme from "./app/navigation/navigationTheme";
+import AppNavigator from "./app/navigation/AppNavigator";
 
 export default function App() {
-  //Getting users permision
-  //componentDidMount => for Class components
-  //useEffect hook for functions
-  const requestPermission = async () => {
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync()
-    if(!granted) alert('Youneed to enable permission to access the library')
-  }
-
-  useEffect(() => {
-    requestPermission(); 
-  }, [])
-
-  return <Screen></Screen>
+  return (
+    <NavigationContainer theme={navigationTheme}>
+      <AppNavigator />
+    </NavigationContainer>
+  );
 }
+
